@@ -1,0 +1,34 @@
+greenfiled =  
+frontend embedded = 
+architettura clean arch quindi fail fast e TDD = clean arch implica che la loigica di business deve essere indipendente dalle tecnologie usate 
+                                                fail fast che deve fallire velocemente, quindi molti controlli su input precondiziooni ecct... non portare avanti 'in difesa' logiche non funzionanti
+                                                e TDD  test driven development quindi scrvio casi d'uso , su questi si sviluppano i test della logica di business disaccoppiati dal db framework ecct... poi si scrive il minimo codice per farli passare e man mano si raffina.
+                                                per poi sviluppare i test di integrazione con db framework ecct e infine i test dei rest.
+
+OpanAPI/Swagger= openAPI documentazione dell'api tramite ad esempio file yaml o json e gestibili tramite Swagger che ne permette le consultazioni e interazioni.
+
+Gestione degli errori standardizzata tramite
+problem details rfc 7808 = restituzione informazioni degli errori tramite json standardizzati.
+
+Useremo i 
+quarkus dev services con testcontainer per lo
+sviluppo e i test di integrazione. = estensione di quarkus che gestisce in maniera automatica molte configurazioni e inizializzazioni ad esempio dei container e testcontainer lo utilizza per far si che i test di integrazione stessi possano usufruire di questi vantaggi ed essere piu reali con db reale gestito da quarkus e container gestiti anche da esso.
+
+usare i java record per dto = per lo scambio tra i livelli anzicche usare ogetti di business pesanti java con logica ecct e dove bisogna fare costruttori, getter, setter e, equals, ecct si usano i java record - > introdotti da java 16 , public record CreateUserRequest(String email, String password) {}
+ simuilano tutto quello detto prima con questo semplice codice, e sono vantaggiosi in termini di scrittura, e poi si capisce che sono solo per lo scambio di dati, meno errori.
+
+proiezioni= nvece di caricare un’entità completa dal DB, prendi solo un sottoinsieme di colonne/campi necessari per una certa view/uso. la cosa interessante che si possono mappare direttamente tramite hibernate jpa nei record desvritti sopra.
+
+istrumentazione automatica di opentelemetry nel
+router http e metriche prometheus = OTel raccoglie metrics/traces/logs ✅
+Prometheus scrape-a solo metriche da un endpoint ✅
+L’endpoint metriche può essere esposto:
+via Micrometer → /metrics (Prometheus format) ✅ (molto comune)
+oppure via OTel con Prometheus exporter ✅
+Grafana fa dashboard su Prometheus per le metriche e glòi altert ✅
+
+Validazione: Uso estensivo di jakarta bean
+validation. = sui dati tramite annotazioni si fanno controolli di pre validazioni ecct
+
+Strategia di testing unit con Junit 5 + 
+integration con dev services. =  junit per la logica di business sugli use case e poi quelli di integration con dev service quindi pochi ma completi e contenerizzati
