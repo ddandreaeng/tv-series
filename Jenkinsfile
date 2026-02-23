@@ -86,7 +86,6 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                     archiveArtifacts artifacts: '**/target/quarkus-app/**', fingerprint: true
                 }
             }
