@@ -94,7 +94,7 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 echo 'Running integration tests...'
-                sh './mvnw verify -DskipITs=false'
+                sh './mvnw verify'
             }
             post {
                 always {
