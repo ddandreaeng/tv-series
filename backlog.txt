@@ -24,13 +24,7 @@ acceptance criteria. (quelli vanno controllati ed eventualmente modificati o int
 
 per lanciarlo in locale su 8080 poi si usa da cli ./mvnw quarkus:dev ed è necessario java 21 e docker
 
+il versionamento è gestibile tramite la copilot cli che ha un server mcp integrato per github ma per le opreazioni che richiedono psw o lancio io i comandi e le inserisco da cli ( copilot non automatizza per questioni di sicurezza), o per automatizzare server creare un tunnel SSH
+
 Sarebbe utile potenziare questo meccanismo tramite le skills sulle tecnologie usate nella specifica, nuovo potenziamento per l'ai.
 
-DOMANDE:
-
-domande: 
-come si lancia in locale?
-come si integra in un meccanismo di conteneirizzazione e deploy automatico e pipeline con controllo del codice?
-con git come si integra?
-come si lavora in team? merge ad esempio
-come usaerlo al meglio su progetti gia esistenti

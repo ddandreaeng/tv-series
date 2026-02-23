@@ -1,0 +1,31 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically for TV Series Project"
+  numExecutors: 2
+  mode: NORMAL
+  
+tool:
+  git:
+    installations:
+      - name: "Default"
+        home: "git"
+  
+  jdk:
+    installations:
+      - name: "JDK 21"
+        home: "/usr/lib/jvm/java-21-openjdk-amd64"
+  
+  maven:
+    installations:
+      - name: "Maven 3.9.6"
+        properties:
+          - installSource:
+              installers:
+                - maven:
+                    id: "3.9.6"
+
+unclassified:
+  location:
+    url: "http://37.119.229.34:8082/"
+  
+  gitHubPluginConfig:
+    hookUrl: "http://37.119.229.34:8082/github-webhook/"
