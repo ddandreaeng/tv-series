@@ -168,7 +168,6 @@ pipeline {
                 }
             }
             steps {
-                input message: 'Deploy to Staging?', ok: 'Deploy'
                 echo 'Deploying to Staging environment...'
                 script {
                     // Configurare qui il deploy su ambiente di staging
@@ -185,7 +184,6 @@ pipeline {
                 }
             }
             steps {
-                input message: 'Deploy to Production?', ok: 'Deploy'
                 echo 'Deploying to Production environment...'
                 script {
                     // Configurare qui il deploy su ambiente di produzione
